@@ -1,27 +1,29 @@
-import java.util.*;
+package programing;
+import java.util.Scanner;
 public class Main 
 {
-public static void main(String[] args) {
-	Object[] obj= {"rausha",'r',true,8,10,1,5,8};
-	int a[]=new int[obj.length];
-	for(int i=0;i<obj.length;i++)
+public static void main(String[] args) 
+{
+	Scanner sc=new Scanner(System.in);
+	System.out.println("enter a value");
+	int n =sc.nextInt();
+	for(int i=1;n>0;i++) {
+		boolean rs=isprime(i);
+	if(rs==true)
+		
+		System.out.print(i+" ");
+	n--;
+	}
+	sc.close();
+}
+
+static boolean isprime(int n)
+{
+	for(int i=2;i<=n/2;i++)
 	{
-	    if(obj[i] instanceof Integer)
-	    	a[i]=(int)obj[i];
+		if(n%i==0)
+			return false;
 	}
-	System.out.println(Arrays.toString(a));
-	int sum=0;
-	for(int i=0;i<a.length;i++)
-	{  
-		int count=0;
-		for(int j=0;j<a.length;i++)
-		{
-			if(a[i]==a[j]);
-			count++;
-		}
-		if(count==1)
-			sum=sum+a[i];
-	}
-	System.out.println(sum);
+	return true;
 }
 }
